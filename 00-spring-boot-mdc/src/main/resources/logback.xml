@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{yyy-MM-dd HH:mm:ss.sss} [%thread] %-5level %logger{35} {%X} - %msg%n</Pattern>
+        </layout>
+    </appender>
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>app-logs.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{yyy-MM-dd HH:mm:ss.sss} [%thread] %-5level %logger{35} {%X} - %msg%n</Pattern>
+        </encoder>
+    </appender>
+    <root level="info">
+        <appender-ref ref="Console" />
+		<appender-ref ref="file" />
+    </root>
+
+</configuration>
